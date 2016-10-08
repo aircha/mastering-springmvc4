@@ -1,4 +1,4 @@
-package kr.co.hanbit.mastering;
+package com.aircha.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

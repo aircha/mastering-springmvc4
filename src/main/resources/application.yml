@@ -3,3 +3,10 @@ server:
   error:
     whitelabel:
       enabled: false
+spring:
+  thymeleaf:
+    cache: false
+  social:
+    twitter:
+      app-id: yrlezAsDOq45hCcGmvPEZJ0Sb
+      app-secret: aJlEVU2Ub4opDjAn1d4uw8A1MKTYzs6zEl7xY3pmBOlUJRN7Lx
