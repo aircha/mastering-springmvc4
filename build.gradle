@@ -32,9 +32,13 @@ repositories {
 
 
 dependencies {
-	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile ('org.springframework.boot:spring-boot-starter-web') {
+		exclude module: 'org.springframework.boot:spring-boot-starter-logging'
+	}
 	compile 'org.springframework.boot:spring-boot-starter-thymeleaf' // springboot-starter-thymeleaf 의존성 추가
 	compile 'org.springframework.boot:spring-boot-starter-social-twitter'
+	compile 'org.springframework.boot:spring-boot-starter-log4j'
+	compile 'org.projectlombok:lombok:1.16.10'
 	compile 'org.webjars:materializecss:0.97.7'
 	compile 'org.webjars:jquery:3.1.1'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
