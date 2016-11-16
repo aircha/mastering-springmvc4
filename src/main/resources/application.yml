@@ -10,3 +10,7 @@ spring:
     twitter:
       app-id: yrlezAsDOq45hCcGmvPEZJ0Sb
       app-secret: aJlEVU2Ub4opDjAn1d4uw8A1MKTYzs6zEl7xY3pmBOlUJRN7Lx
+  messages:
+    cache-seconds: 0
+  mvc:
+    locale: ko_KR
