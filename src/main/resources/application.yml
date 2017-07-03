@@ -14,3 +14,8 @@ spring:
     cache-seconds: 0
   mvc:
     locale: ko_KR
+logging:
+  level:
+    org.springframework.web: error
+    com.aircha: debug
+    root: info

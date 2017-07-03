@@ -2,7 +2,8 @@ package com.aircha.search.cache;
 
 import com.aircha.search.LightTweet;
 import com.aircha.search.SearchParamsBuilder;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.social.TwitterProperties;
 import org.springframework.cache.annotation.Cacheable;
@@ -14,9 +15,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Slf4j
 @Service
 public class SearchCache {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private Twitter twitter;
 
     @Autowired
@@ -26,7 +28,7 @@ public class SearchCache {
 
     @Cacheable("searches")
     public List<LightTweet> fetch(String searchType, String keyword) {
-        log.info("Cache miss for : {}", keyword);
+        logger.info("Cache miss for : {}", keyword);
         SearchParameters searchParam = SearchParamsBuilder.createSearchParam(searchType, keyword);
         return twitter.searchOperations()
                 .search(searchParam).getTweets().stream()
